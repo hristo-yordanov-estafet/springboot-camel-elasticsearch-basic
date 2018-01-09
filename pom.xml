@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>learning-camel-introduction</artifactId>
+    <artifactId>springboot-camel-elasticsearch-basic</artifactId>
     <version>0.0.1</version>
 
     <parent>
@@ -27,6 +27,73 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-core</artifactId>
+		    <version>2.20.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-spring-boot-starter</artifactId>
+		    <version>2.20.1</version>
+		</dependency>
+		<!-- <dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-cdi</artifactId>
+		    <version>2.20.1</version>
+		</dependency> -->
+		<dependency>
+		    <groupId>javax.inject</groupId>
+		    <artifactId>javax.inject</artifactId>
+		    <version>1</version>
+		</dependency>
+		<dependency>
+		   <groupId>org.apache.camel</groupId>
+		   <artifactId>camel-servlet</artifactId>
+		   <version>2.20.1</version>
+		</dependency>
+		<!-- used by jaxrs -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-cxf</artifactId>
+			<version>2.20.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-http</artifactId>
+		    <version>2.20.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-bindy</artifactId>
+		    <version>2.20.1</version>
+		</dependency>
+        <dependency>
+		    <groupId>org.elasticsearch.client</groupId>
+		    <artifactId>transport</artifactId>
+		    <version>6.0.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-jackson</artifactId>
+		    <version>2.20.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-elasticsearch</artifactId>
+		    <version>2.20.1</version>
+		</dependency>
+		<!-- used to consume elasticsearch api -->
+		<dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-jetty</artifactId>
+		    <version>2.20.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-restlet</artifactId>
+		    <version>2.20.1</version>
+		</dependency>
     </dependencies>
 
     <properties>
