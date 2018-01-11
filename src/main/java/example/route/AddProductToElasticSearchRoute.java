@@ -39,7 +39,8 @@ public class AddProductToElasticSearchRoute extends RouteBuilder {
                 //.to("elasticsearch://cluster")
                 //.to("jetty://http://localhost:9200")
 
-                .to("restlet:http://localhost:9200/platform/product/{id}?restletMethod=put")
+                //.to("restlet:http://localhost:9200/platform/product/{id}?restletMethod=put")
+                .to("restlet:http://elastisearch.vaosce.svc:9200/platform/product/{id}?restletMethod=put")
                 .log("********************Response received");
         
 
