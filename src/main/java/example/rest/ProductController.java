@@ -29,5 +29,11 @@ public class ProductController {
 		}
     	System.out.println("***************** END putProduct");
     }
+	
+	@RequestMapping(value="/v1/test", method=RequestMethod.GET)
+    @ResponseStatus(value = HttpStatus.OK)
+    public void getProduct(@RequestBody String payload) {
+		System.out.println("***************** test");
+    }
 
 }
