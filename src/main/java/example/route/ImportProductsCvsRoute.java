@@ -13,17 +13,17 @@ public class ImportProductsCvsRoute extends RouteBuilder {
 	
 	@Override
     public void configure() throws Exception {
-
+		System.out.println("***************** start ImportProductsCvsRoute");
         BindyCsvDataFormat csv = new BindyCsvDataFormat(Product.class);
         
         from("file://src/main/resources?fileName=products.csv&noop=true").id(("import-products-cvs-route"))
             //.onException(NoNodeAvailableException.class).maximumRedeliveries(2).to("direct://error").handled(true).end()
-            .log(LoggingLevel.DEBUG, "Records received : ${body}")
+            .log(LoggingLevel.INFO, "Records received : ${body}")
             .unmarshal(csv)
             .split(body())
                 .setHeader("id").simple("${body.id}")
                 .to("direct:addProduct");
-        
+        System.out.println("***************** end ImportProductsCvsRoute");
 //        from("direct://error")
 //        .log("No node Elasticsearch server is available");
 
