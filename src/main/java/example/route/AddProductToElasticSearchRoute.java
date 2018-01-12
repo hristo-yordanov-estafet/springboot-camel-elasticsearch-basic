@@ -40,8 +40,8 @@ public class AddProductToElasticSearchRoute extends RouteBuilder {
                 //.to("jetty://http://localhost:9200")
 
                 //.to("restlet:http://localhost:9200/platform/product/{id}?restletMethod=put")
-                .to("restlet:http://elasticsearch.vaosce.svc:9200/platform/product/{id}?restletMethod=put")
-                //.to("restlet:http://elasticsearch-vaosce.e4ff.pro-eu-west-1.openshiftapps.com/platform/product/{id}?restletMethod=put")
+                //.to("restlet:http://elasticsearch.vaosce.svc:9200/platform/product/{id}?restletMethod=put")
+                .to("restlet:http://elasticsearch-vaosce.e4ff.pro-eu-west-1.openshiftapps.com/platform/product/{id}?restletMethod=put")
                 .log("********************Response received");
         
 
