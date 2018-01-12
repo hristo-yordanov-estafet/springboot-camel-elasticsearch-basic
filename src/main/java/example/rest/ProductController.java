@@ -32,7 +32,7 @@ public class ProductController {
 	
 	@RequestMapping(value="/v1/test", method=RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
-    public void getProduct(@RequestBody String payload) {
+    public void getTest() {
 		System.out.println("***************** test");
     }
 
