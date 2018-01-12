@@ -28,8 +28,8 @@ public class Product {
 	private String country;
 	@DataField(pos = 7) 
 	private String url;
-	@DataField(pos = 8, pattern = "yyyy-MM-dd HH:mm") 
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm") 
+	@DataField(pos = 8, pattern = "dd/MM/yyyy HH:mm") 
+	@JsonFormat(pattern="dd/MM/yyyy HH:mm") 
 	private Date date;
 	
 	public String getId() {
