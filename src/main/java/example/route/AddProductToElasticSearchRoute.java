@@ -23,7 +23,7 @@ public class AddProductToElasticSearchRoute extends RouteBuilder {
         System.out.println(ElasticsearchConstants.OPERATION_INDEX);
 
         from("direct:addProduct").id("add-product-route")
-                .log(LoggingLevel.INFO,"Add new product...${body.id}  : ${body.name} ")
+                .log("Add new product...${body.id}  : ${body.name} ")
                 .setHeader(ElasticsearchConstants.PARAM_INDEX_NAME).simple("platform")
                 .setHeader(ElasticsearchConstants.PARAM_INDEX_TYPE).simple("product")
                 .setHeader(ElasticsearchConstants.PARAM_OPERATION).constant(ElasticsearchConstants.OPERATION_INDEX)
@@ -40,8 +40,8 @@ public class AddProductToElasticSearchRoute extends RouteBuilder {
                 //.to("jetty://http://localhost:9200")
 
                 //.to("restlet:http://localhost:9200/platform/product/{id}?restletMethod=put")
-                //.to("restlet:http://elasticsearch.vaosce.svc:9200/platform/product/{id}?restletMethod=put")
-                .to("restlet:http://elasticsearch-vaosce.e4ff.pro-eu-west-1.openshiftapps.com/platform/product/{id}?restletMethod=put")
+                .to("restlet:http://elasticsearch.vaosce.svc:9200/platform/product/{id}?restletMethod=put")
+                //.to("restlet:http://elasticsearch-vaosce.e4ff.pro-eu-west-1.openshiftapps.com/platform/product/{id}?restletMethod=put")
                 .log("********************Response received");
         
 
