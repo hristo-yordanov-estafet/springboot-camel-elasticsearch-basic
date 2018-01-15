@@ -28,9 +28,9 @@ public class Product {
 	private String country;
 	@DataField(pos = 7) 
 	private String url;
-	@DataField(pos = 8, pattern = "dd/MM/yyyy HH:mm") 
-	@JsonFormat(pattern="dd/MM/yyyy HH:mm") 
-	private Date date;
+///*	@DataField(pos = 8, pattern = "dd/MM/yyyy HH:mm") 
+//	@JsonFormat(pattern="dd/MM/yyyy HH:mm") 
+//	private Date date;*/
 	
 	public String getId() {
 		return id;
@@ -68,12 +68,12 @@ public class Product {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
+//	public Date getDate() {
+//		return date;
+//	}
+//	public void setDate(Date date) {
+//		this.date = date;
+//	}
 	public String getUrl() {
 		return url;
 	}
