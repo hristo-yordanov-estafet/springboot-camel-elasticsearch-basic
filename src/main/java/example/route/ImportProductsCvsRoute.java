@@ -18,7 +18,8 @@ public class ImportProductsCvsRoute extends RouteBuilder {
         
         from("file://src/main/resources?fileName=products.csv&noop=true").id(("import-products-cvs-route"))
             //.onException(NoNodeAvailableException.class).maximumRedeliveries(2).to("direct://error").handled(true).end()
-            .log(LoggingLevel.INFO, "Records received : ${body}")
+            .onException(Exception.class).to("log:error? showCaughtException=true& showStackTrace=true")
+            .log("Records received : ${body}")
             .unmarshal(csv)
             .split(body())
                 .setHeader("id").simple("${body.id}")
