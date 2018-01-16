@@ -44,7 +44,7 @@ public class ImportProductsCvsRoute extends RouteBuilder {
         	System.out.println("***************** file not exists");
         }
         
-        from("file://src/main/resources?fileName=products.csv&noop=true&directoryMustExist=true&fileExist=Ignore").id(("import-products-cvs-route"))
+        from("file://src/main/resources/?fileName=products.csv&noop=true").id(("import-products-cvs-route"))
             //.onException(NoNodeAvailableException.class).maximumRedeliveries(2).to("direct://error").handled(true).end()
             //.onException(Exception.class).log("************************************************************fole exception").end()
             .log("Records received : ${body}")
