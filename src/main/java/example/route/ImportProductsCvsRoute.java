@@ -37,14 +37,14 @@ public class ImportProductsCvsRoute extends RouteBuilder {
         File directory = new File("./");
         System.out.println("PATH-------------------" + directory.getAbsolutePath());
         
-        File f = new File("src/main/resources/products.csv");
+        File f = new File("/deployments/src/main/resources/products.csv");
         if(f.exists() && !f.isDirectory()) { 
         	System.out.println("***************** file exists");
         } else {
         	System.out.println("***************** file not exists");
         }
         
-        from("file://src/main/resources/?fileName=products.csv&noop=true").id(("import-products-cvs-route"))
+        from("file:///deployments/src/main/resources/?fileName=products.csv&noop=true").id(("import-products-cvs-route"))
             //.onException(NoNodeAvailableException.class).maximumRedeliveries(2).to("direct://error").handled(true).end()
             //.onException(Exception.class).log("************************************************************fole exception").end()
             .log("Records received : ${body}")
